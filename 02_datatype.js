@@ -39,3 +39,27 @@ const myFunction =function(){
 //null ==>typeof value will give object.
 //return tye of non-primitive datatypes is object functions 
 console.log(typeof myObj);
+
+// stack(primitive),heap(non-primitive)
+//stack se we get call by value(we get the copy)
+let myname = "shrey"
+
+let anum=myname
+anum ="hi"
+console.log(myname);
+console.log(anum);
+//heap will give the reference itself
+let user ={
+    email :"user@googlr.com",
+    upi : "user"
+}
+
+let user2=user
+
+user2.email="shrey@google.com"
+console.log(user.email);
+console.log(user2.email);
+
+
+
+
