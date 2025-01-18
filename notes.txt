@@ -1,0 +1,45 @@
+Javascript execution context(2 phases)
+->Global EC
+ 
+->Function Execution context
+->Eval Execution context
+
+two phases of execution of a Javascript code:
+>memory creation phase--variable declaration 
+>Execution phase--
+
+take an example:
+
+let val1=10
+let val2=5
+
+function addNum(num1,num2){
+    let total =num1+num2;
+    return total;
+}
+
+let result1=addNum(val1 ,val2)
+let result2=addNum(10,2)
+
+process of execution:
+1)Global execution in Javascript
+2)memory phase:
+val1->undefined
+Val2->undefined
+addnum->defination
+result1->undefined
+result2->undefined
+
+3)Execution phase
+val1->10
+val2->5
+addNum-> Another execution box----->memory Phase +ExecutionPhase //this context will also get deleted
+                                    val1->undefined num1->10
+                                    val2 ->undefined num2->5
+                                    total->undefined total->15
+                                    result1 =15
+result2=-->Another execution box----->val1->undefined num1->10
+                                    val2 ->undefined num2->2
+                                    total->undefined total->12
+
+
